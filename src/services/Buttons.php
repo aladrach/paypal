@@ -613,7 +613,7 @@ class Buttons extends Component
         $buttonHtml = null;
         $settings = Paypal::$app->settings->getSettings();
 
-        if (!$settings->liveAccount || !$settings->sandboxAccount){
+        if (!$button->email){
             return Paypal::t("Please add a valid PayPal account on the plugin settings");
         }
 

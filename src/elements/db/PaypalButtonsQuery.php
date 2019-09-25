@@ -105,6 +105,7 @@ class PaypalButtonsQuery extends ElementQuery
             'enupalpaypal_buttons.discountType',
             'enupalpaypal_buttons.discount',
             'enupalpaypal_buttons.shippingAmount',
+            'enupalpaypal_buttons.email',
             'enupalpaypal_buttons.shippingOption',
             'enupalpaypal_buttons.itemWeight',
             'enupalpaypal_buttons.itemWeightUnit',

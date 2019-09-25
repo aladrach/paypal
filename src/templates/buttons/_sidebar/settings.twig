@@ -35,6 +35,17 @@
         name: 'enabled',
         on: paypalButton.enabled
     }) }}
+
+    {{ forms.textField({
+        first: true,
+        label: "Email Address"|t('enupal-paypal'),
+        id: 'email',
+        name: 'email',
+        value: paypalButton.email,
+        errors: paypalButton.getErrors('sku'),
+        autofocus: true,
+        required: true
+    }) }}
 </div>
 <hr>
 <div class="meta">

@@ -78,6 +78,7 @@ class PaypalButton extends Element
     public $discount;
     public $shippingOption;
     public $shippingAmount;
+    public $email;
     public $itemWeight;
     public $itemWeightUnit;
     public $priceMenuName;
@@ -127,7 +128,7 @@ class PaypalButton extends Element
         $this->cancelUrl = $this->cancelUrl ? $this->cancelUrl : $this->settings->cancelUrl;
         $this->currency = $this->currency ? $this->currency : $this->settings->defaultCurrency;
 
-        $this->business = $this->settings->testMode ? trim(Craft::parseEnv($this->settings->sandboxAccount)) : trim(Craft::parseEnv($this->settings->liveAccount));
+        $this->business = $this->email;
     }
 
     /**
@@ -180,7 +181,8 @@ class PaypalButton extends Element
      */
     public function getBusiness()
     {
-        $this->business = $this->settings->testMode ? trim(Craft::parseEnv($this->settings->sandboxAccount)) : trim(Craft::parseEnv($this->settings->liveAccount));
+        $this->business = $this->email;
+        
 
         return $this->business;
     }
@@ -488,6 +490,7 @@ class PaypalButton extends Element
 
         $record->name = $this->name;
         $record->sku = $this->sku;
+        $record->email = $this->email;
         $record->size = $this->size;
         $record->currency = $this->currency;
         $record->language = $this->language;
@@ -497,6 +500,7 @@ class PaypalButton extends Element
         $record->discountType = $this->discountType;
         $record->discount = $this->discount;
         $record->shippingAmount = $this->shippingAmount;
+        
         $record->shippingOption = $this->shippingOption;
         $record->customerQuantity = $this->customerQuantity ? $this->customerQuantity : 0;
         $record->openIn = $this->openIn;

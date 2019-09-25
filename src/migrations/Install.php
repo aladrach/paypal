@@ -79,6 +79,7 @@ class Install extends Migration
             'input1' => $this->string(),
             'input2' => $this->string(),
             'returnUrl' => $this->string(),
+            'email' => $this->string(),
             'cancelUrl' => $this->string(),
             'buttonName' => $this->string(),
             'openIn' => $this->integer(),
